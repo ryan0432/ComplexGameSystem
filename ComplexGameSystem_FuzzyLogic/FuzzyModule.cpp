@@ -14,7 +14,20 @@ FuzLinguVar& FuzzyModule::CreateFLV(const std::string& VarName)
 
 void FuzzyModule::AddFuzRule(FuzTerm & antecedent, FuzTerm & consequence)
 {
-	m_FuzRules.push_back( std::unique_ptr<FuzRule>( new FuzRule(antecedent, consequence) ) );
+	//m_FuzRules.push_back( std::unique_ptr<FuzRule>( new FuzRule(antecedent, consequence) ) );
+}
+
+inline void FuzzyModule::Fuzzify(const std::string & NameOfFLV, double val)
+{
+}
+
+inline float FuzzyModule::Defuzzify(const std::string & key, DefuzType method)
+{
+	return 0.0f;
+}
+
+inline void FuzzyModule::SetConfsOfConsqToZero()
+{
 }
 
 

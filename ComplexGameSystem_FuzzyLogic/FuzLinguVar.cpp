@@ -1,12 +1,17 @@
 #include "FuzLinguVar.h"
+#include "FuzSetBase.h"
 
 
 
-FuzLinguVar::FuzLinguVar()
+FuzLinguVar::FuzLinguVar(const FuzLinguVar&)
 {
 }
 
+FuzLinguVar & FuzLinguVar::operator=(const FuzLinguVar &)
+{
+	// TODO: insert return statement here
+}
 
-FuzLinguVar::~FuzLinguVar()
+void FuzLinguVar::AdjustRangeToFit(float min, float max)
 {
 }
