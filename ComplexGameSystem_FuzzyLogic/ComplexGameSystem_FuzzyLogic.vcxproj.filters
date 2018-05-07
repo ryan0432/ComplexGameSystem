@@ -24,9 +24,6 @@
     <ClCompile Include="FuzzyModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FuzLinguVar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FuzRule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -45,15 +42,15 @@
     <ClCompile Include="FuzSet_RightShoulder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FuzVariable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexGameSystem_FuzzyLogicApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FuzzyModule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzLinguVar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FuzRule.h">
@@ -72,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FuzSet_RightShoulder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FuzVariable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
