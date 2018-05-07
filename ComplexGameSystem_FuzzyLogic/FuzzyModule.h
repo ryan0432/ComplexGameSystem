@@ -8,7 +8,7 @@ class FuzTerm;
 
 //enum class to choose which type of Defuzz method
 //they want to use
-enum class DefuzType
+enum DefuzType
 {
 	MAX_AV,
 	CENTROID
@@ -28,7 +28,7 @@ public:
 	inline void Fuzzify(const std::string& NameOfFLV, float val);
 
 	//Defuzzify a Fuzzy Set and return a crisp value
-	inline float Defuzzify(const std::string& key, DefuzType method);
+	inline float Defuzzify(const std::string& NameOfFLV, DefuzType method);
 
 	~FuzzyModule();
 	

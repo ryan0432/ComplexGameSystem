@@ -16,15 +16,24 @@ FuzVariable& FuzzyModule::CreateFLV(const std::string& VarName)
 
 void FuzzyModule::AddFuzRule(FuzTerm & antecedent, FuzTerm & consequence)
 {
-	//m_FuzRules.push_back( std::unique_ptr<FuzRule>( new FuzRule(antecedent, consequence) ) );
+	m_FuzRules.push_back(new FuzRule(antecedent, consequence));
 }
 
 inline void FuzzyModule::Fuzzify(const std::string & NameOfFLV, float val)
 {
+
 }
 
-inline float FuzzyModule::Defuzzify(const std::string & key, DefuzType method)
+inline float FuzzyModule::Defuzzify(const std::string& NameOfFLV, DefuzType method)
 {
+	if (method == MAX_AV)
+	{
+		m_FuzVars[NameOfFLV]->DeFuzzifyMaxAV();
+	}
+	else if (method == CENTROID)
+	{
+		m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(DEFAULT);
+	}
 	return 0.0f;
 }
 

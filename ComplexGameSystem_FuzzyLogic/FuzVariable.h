@@ -1,6 +1,14 @@
 #pragma once
 #include <map>
 
+enum CentroidAccuracy
+{
+	DEFAULT = 10,
+	LOW = 5,
+	HIGH = 15,
+	EXTREME = 20
+};
+
 class FuzzyModule;
 class FuzSetBase;
 class FzSet;
@@ -9,10 +17,6 @@ class FuzVariable
 private:
 
 	typedef std::map<std::string, FuzSetBase*> MemberSets;
-
-	//Disallow clients to cpoy Fuzzy Linguistic Variable
-	FuzVariable(const FuzVariable&);
-	FuzVariable& operator=(const FuzVariable&);
 
 	MemberSets m_MemberSets;
 
@@ -29,7 +33,7 @@ private:
 	friend class FuzzyModule;
 
 public:
-	FuzVariable() :m_dMinRange(0.0f), m_dMaxRange(0.0f) {}
+	FuzVariable() : m_dMinRange(0.0f), m_dMaxRange(0.0f) {}
 
 	FzSet AddLeftShoulderSet(std::string name, float minBound, float peak, float maxBound);
 	FzSet AddTriangleSet(std::string name, float minBound, float peak, float maxBound);
@@ -41,6 +45,10 @@ public:
 
 	float DeFuzzifyMaxAV() const;
 
-	float DeFuzzifyCentroid(int centroidAccuracy) const;
+	float DeFuzzifyCentroid(CentroidAccuracy) const;
+
+	//Disallow clients to cpoy Fuzzy Variable
+	FuzVariable(const FuzVariable&) = delete;
+	FuzVariable& operator=(const FuzVariable&) = delete;
 
 };

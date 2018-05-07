@@ -40,13 +40,13 @@ public:
 	//If this Fuzzy Set is part of a consequent FLV and launched by a rule,
 	//then this function sets the DOM, which is a confidence level, to the
 	//maximum of the parameter value or the set's existing m_dDOM value.
-	void ORwithDOM(float val);
+	void ORwithDOM(float val) { if (val > m_dDOM) m_dDOM = val; }
 
 	float GetRepVal() const { return m_dRepresentativeVal; };
 	void ClearDOM() { m_dDOM = 0.0f; }
 	float GetDOM() const { return m_dDOM; }
-	void SetDOM(float val) { assert(val <= 1.0f);
-							 assert(val >= 0.0f);
+	void SetDOM(float val) { assert(val <= 1.0f && "Input value exceeds FLV limit (1.0f)");
+							 assert(val >= 0.0f && "Input value is belows FLV limit (0.0f)");
 							 m_dDOM = val; }
 
 };

@@ -1,8 +1,9 @@
 #include "FuzRule.h"
+#include "FuzTerm.h"
 
 
 
-FuzRule::FuzRule()
+FuzRule::FuzRule(FuzTerm& ant, FuzTerm& con)
 {
 }
 
