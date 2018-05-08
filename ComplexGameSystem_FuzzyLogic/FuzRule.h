@@ -1,7 +1,7 @@
 #pragma once
 #include "FuzTerm.h"
-
-class FuzTerm;
+#include "FuzOperators.h"
+#include "FuzSet_Base.h"
 
 class FuzRule
 {

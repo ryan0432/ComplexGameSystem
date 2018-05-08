@@ -15,7 +15,8 @@ private:
 	float m_dMinRange;
 	float m_dMaxRange;
 
-	void AdjustRangeToFit(float min, float max);
+	//Adjust current Fuzzy Variable's boundaries to meet assigned min/max value
+	void AdjustRangeToFit(float minBound, float maxBound);
 
 	//Clients will get a reference of fuzzy variable when an instance is created
 	//via FuzzyModule::CreateFLV(). To prevent clients from deleting the instance,

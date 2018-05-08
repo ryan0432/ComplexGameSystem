@@ -163,6 +163,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComplexGameSystem_FuzzyLogicApp.cpp" />
+    <ClCompile Include="FuzOperators.cpp" />
     <ClCompile Include="FuzSet_LeftShoulder.cpp" />
     <ClCompile Include="FuzSet_RightShoulder.cpp" />
     <ClCompile Include="FuzSet_Triangle.cpp" />
@@ -172,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexGameSystem_FuzzyLogicApp.h" />
+    <ClInclude Include="FuzOperators.h" />
     <ClInclude Include="FuzRule.h" />
     <ClInclude Include="FuzSet_Base.h" />
     <ClInclude Include="FuzSet_LeftShoulder.h" />
