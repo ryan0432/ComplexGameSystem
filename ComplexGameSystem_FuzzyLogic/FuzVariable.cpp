@@ -1,12 +1,12 @@
 #include "FuzVariable.h"
 #include "FuzzyModule.h"
-#include "FuzSetBase.h"
-
-FuzVariable::FuzVariable()
-{
-}
+#include "FuzSet_Base.h"
 
 
 FuzVariable::~FuzVariable()
 {
+	for (auto i : m_MemberSets)
+	{
+		delete i.second;
+	}
 }

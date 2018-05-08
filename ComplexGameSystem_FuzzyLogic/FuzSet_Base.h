@@ -1,15 +1,7 @@
 #pragma once
 #include "assert.h"
 
-enum class FuzSetType
-{
-	LEFT_SHOULDER,
-	RIGHT_SHOULDER,
-	TRIANGLE,
-	TRAOEZIUDAL
-};
-
-class FuzSetBase
+class FuzSet_Base
 {
 protected:
 	//A fuzzy set holds a Degree of Membership (DOM)
@@ -28,7 +20,7 @@ public:
 	//There is no default constructor for this base class.
 	//A client needs to provide a Representative Value to create
 	//an Fuzzy Set object
-	FuzSetBase(float RepVal) : m_dDOM(0.0f), m_dRepresentativeVal(RepVal) {};
+	FuzSet_Base(float RepVal) : m_dDOM(0.0f), m_dRepresentativeVal(RepVal) {};
 
 	//Any class derived from this base Fuzzy Set class MUST take
 	//in this function to caculate a certain crisp value's DOM

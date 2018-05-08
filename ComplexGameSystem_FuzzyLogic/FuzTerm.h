@@ -3,7 +3,7 @@ class FuzTerm
 {
 public:
 
-	virtual ~FuzTerm();
+	virtual ~FuzTerm() {};
 
 	//All terms have to implement a virtual constructor
 	virtual FuzTerm* Clone() const = 0;

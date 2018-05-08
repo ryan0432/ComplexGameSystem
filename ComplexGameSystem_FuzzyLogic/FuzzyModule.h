@@ -8,10 +8,18 @@ class FuzTerm;
 
 //enum class to choose which type of Defuzz method
 //they want to use
-enum DefuzType
+//enum DefuzType
+//{
+//	MAX_AV,
+//	CENTROID
+//};
+
+enum CentroidAccuracy
 {
-	MAX_AV,
-	CENTROID
+	LOW_5 = 5,
+	MID_10 = 10,
+	HIGH_15 = 15,
+	EXTREME_20 = 20
 };
 
 class FuzzyModule
@@ -27,14 +35,19 @@ public:
 	//Fuzzify a crisp val by the FLV called
 	inline void Fuzzify(const std::string& NameOfFLV, float val);
 
-	//Defuzzify a Fuzzy Set and return a crisp value
-	inline float Defuzzify(const std::string& NameOfFLV, DefuzType method);
+	//Defuzzify a Fuzzy Variable and return a crisp value with MaxAV method
+	inline float DefuzzifyMaxAV(const std::string& NameOfFLV);
+
+	//Defuzzify a Fuzzy Variable and return a crisp value with MaxAV method
+	inline float DeFuzzifyCentroid(const std::string& NameOfFLV, CentroidAccuracy accuracy);
 
 	~FuzzyModule();
 	
 private:
 	//Define map type to class
 	typedef std::map<std::string, FuzVariable*> FLVMap;
+	//Use shared pointers instead of traditional pointers
+	//typedef std::map< std::string, std::shared_ptr<FuzVariable> > FLVMap;
 
 	//Declare a fuzzy linquistic varieble map to store all FLVs
 	FLVMap m_FuzVars;
@@ -42,7 +55,7 @@ private:
 	//Declare a dynamic array (vector) to store all Fuzzy Rules
 	std::vector<FuzRule*> m_FuzRules;
 
-	//Set confidences in each consquests to 0. Will be used by Defuzzfy()
+	//Set confidences in each consquests to 0. Will be used by Defuzzify()
 	inline void SetConfsOfConsqToZero();
 };
 

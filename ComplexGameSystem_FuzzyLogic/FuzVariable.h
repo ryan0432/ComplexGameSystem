@@ -1,22 +1,14 @@
 #pragma once
 #include <map>
 
-enum CentroidAccuracy
-{
-	DEFAULT = 10,
-	LOW = 5,
-	HIGH = 15,
-	EXTREME = 20
-};
-
 class FuzzyModule;
-class FuzSetBase;
+class FuzSet_Base;
 class FzSet;
 class FuzVariable
 {
 private:
 
-	typedef std::map<std::string, FuzSetBase*> MemberSets;
+	typedef std::map<std::string, FuzSet_Base*> MemberSets;
 
 	MemberSets m_MemberSets;
 
@@ -45,10 +37,9 @@ public:
 
 	float DeFuzzifyMaxAV() const;
 
-	float DeFuzzifyCentroid(CentroidAccuracy) const;
+	float DeFuzzifyCentroid(unsigned int sampleNumber) const;
 
 	//Disallow clients to cpoy Fuzzy Variable
 	FuzVariable(const FuzVariable&) = delete;
 	FuzVariable& operator=(const FuzVariable&) = delete;
-
 };

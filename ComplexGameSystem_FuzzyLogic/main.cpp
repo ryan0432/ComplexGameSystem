@@ -1,5 +1,5 @@
 #include "ComplexGameSystem_FuzzyLogicApp.h"
-#include "vld.h"
+//#include "vld.h"
 
 int main()
 {
