@@ -3,7 +3,7 @@
 
 class FuzzyModule;
 class FuzSet_Base;
-class FzSet;
+class FuzProxySet;
 class FuzVariable
 {
 private:
@@ -28,10 +28,10 @@ private:
 public:
 	FuzVariable() : m_dMinRange(0.0f), m_dMaxRange(0.0f) {}
 
-	FzSet AddLeftShoulderSet(std::string name, float minBound, float peak, float maxBound);
-	FzSet AddTriangleSet(std::string name, float minBound, float peak, float maxBound);
-	FzSet AddRightShoulderSet(std::string name, float minBound, float peak, float maxBound);
-	FzSet AddSingletonSet(std::string name, float minBound, float peak, float maxBound);
+	FuzProxySet AddLeftShoulderSet(std::string name, float minBound, float peak, float maxBound);
+	FuzProxySet AddTriangleSet(std::string name, float minBound, float peak, float maxBound);
+	FuzProxySet AddRightShoulderSet(std::string name, float minBound, float peak, float maxBound);
+	FuzProxySet AddSingletonSet(std::string name, float minBound, float peak, float maxBound);
 
 	//Fizzify a value by calculation its DOM in each of this Fuzzy Variable's subsets
 	void Fuzzify(float val);

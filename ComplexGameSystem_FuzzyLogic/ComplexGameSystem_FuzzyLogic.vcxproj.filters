@@ -45,6 +45,9 @@
     <ClCompile Include="FuzOperators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FuzSet_Singleton.cpp">
+      <Filter>Source Files\FuzzySetTypes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexGameSystem_FuzzyLogicApp.h">
@@ -76,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="FuzOperators.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FuzProxySet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FuzSet_Singleton.h">
+      <Filter>Header Files\FuzzySetTypes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

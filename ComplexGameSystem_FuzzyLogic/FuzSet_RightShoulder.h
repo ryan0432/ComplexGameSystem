@@ -7,16 +7,16 @@ public:
 	//to be input. Peak and Left crisp values
 	//The the Representative Value is the average of the values at the
 	//beginning and end of the plateau for Left and Right Shoulder Sets
-	FuzSet_RightShoulder(float mid, float lft) :
-		FuzSet_Base((mid + lft) / 2), m_dPeak(mid), m_dLeft(lft) {};
+	FuzSet_RightShoulder(float lft, float mid, float rgt) :
+		FuzSet_Base((mid + rgt) / 2), m_dLeft(lft), m_dPeak(mid), m_dRight(rgt) {};
 
 	//Inherited from FuzSet_Base, returns a DOM,
 	//relative to input crisp value
 	float CalculateDOM(float val) const;
 
 private:
-	float m_dPeak;
 	float m_dLeft;
-
+	float m_dPeak;
+	float m_dRight;
 };
 
