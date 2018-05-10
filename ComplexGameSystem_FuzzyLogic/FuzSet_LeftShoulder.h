@@ -1,5 +1,16 @@
 #pragma once
+//-------------------------------------------------------------//
+//															   //
+//	Name: FuzSet_LeftShoulder.h								   //
+//															   //
+//	Desc: A Fuzzy Set in [Left Shoulder] shape.				   //
+//		  Degree Of Membership (DOM) range: 0.0f ~ 1.0f		   //
+//		  crisp value principle: m_dLeft < m_dPeak < m_dRight  //
+//															   //
+//-------------------------------------------------------------//
+
 #include "FuzSet_Base.h"
+
 class FuzSet_LeftShoulder : public FuzSet_Base
 {
 public:

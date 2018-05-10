@@ -1,5 +1,16 @@
 #pragma once
+//-------------------------------------------------------------//
+//															   //
+//	Name: FuzSet_Triangle.h									   //
+//															   //
+//	Desc: A Fuzzy Set in [Triangle] shape.					   //
+//		  Degree Of Membership (DOM) range: 0.0f ~ 1.0f		   //
+//		  crisp value principle: m_dLeft < m_dPeak < m_dRight  //
+//															   //
+//-------------------------------------------------------------//
+
 #include "FuzSet_Base.h"
+
 class FuzSet_Triangle : public FuzSet_Base
 {
 public:

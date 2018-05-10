@@ -1,18 +1,19 @@
 #pragma once
+//-----------------------------------------------------------------------------//
+//																 			   //
+//	Name: FuzzyModule.h												 		   //
+//																 			   //
+//	Desc: A collection of Fuzzy Variables and the Rules that operates them.	   //
+//		  It is the centre operating system that operates Fuzzy Logic system.  //
+//																 			   //
+//-----------------------------------------------------------------------------//
+
 #include <map>
 #include <vector>
 
 class FuzVariable;
 class FuzRule;
 class FuzTerm;
-
-//enum class to choose which type of Defuzz method
-//they want to use
-//enum DefuzType
-//{
-//	MAX_AV,
-//	CENTROID
-//};
 
 enum CentroidAccuracy
 {

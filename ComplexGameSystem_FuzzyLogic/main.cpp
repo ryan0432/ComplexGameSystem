@@ -1,9 +1,8 @@
 #include "ComplexGameSystem_FuzzyLogicApp.h"
-//#include "vld.h"
+#include "vld.h"
 
 int main()
 {
-	
 	// allocation
 	auto app = new ComplexGameSystem_FuzzyLogicApp();
 

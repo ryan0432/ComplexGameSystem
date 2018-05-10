@@ -4,7 +4,7 @@
 ////////////////////////
 //------ FuzAND ------//
 ////////////////////////
-FuzAND::FuzAND(const FuzAND & OriginalFuzAnd)
+FuzAND::FuzAND(const FuzAND& OriginalFuzAnd)
 {
 	for (auto i : OriginalFuzAnd.m_Terms)
 	{
@@ -21,20 +21,20 @@ FuzAND::~FuzAND()
 	m_Terms.clear();
 }
 
-FuzAND::FuzAND(FuzTerm & term01, FuzTerm & term02)
+FuzAND::FuzAND(FuzTerm& term01, FuzTerm & term02)
 {
 	m_Terms.push_back(term01.Clone());
 	m_Terms.push_back(term02.Clone());
 }
 
-FuzAND::FuzAND(FuzTerm & term01, FuzTerm & term02, FuzTerm & term03)
+FuzAND::FuzAND(FuzTerm& term01, FuzTerm & term02, FuzTerm & term03)
 {
 	m_Terms.push_back(term01.Clone());
 	m_Terms.push_back(term02.Clone());
 	m_Terms.push_back(term03.Clone());
 }
 
-FuzAND::FuzAND(FuzTerm & term01, FuzTerm & term02, FuzTerm & term03, FuzTerm & term04)
+FuzAND::FuzAND(FuzTerm& term01, FuzTerm & term02, FuzTerm & term03, FuzTerm & term04)
 {
 	m_Terms.push_back(term01.Clone());
 	m_Terms.push_back(term02.Clone());
@@ -96,20 +96,20 @@ FuzOR::FuzOR(const FuzOR & OriginalFuzOR)
 	}
 }
 
-FuzOR::FuzOR(FuzTerm & term01, FuzTerm & term02)
+FuzOR::FuzOR(FuzTerm& term01, FuzTerm & term02)
 {
 	m_Terms.push_back(term01.Clone());
 	m_Terms.push_back(term02.Clone());
 }
 
-FuzOR::FuzOR(FuzTerm & term01, FuzTerm & term02, FuzTerm & term03)
+FuzOR::FuzOR(FuzTerm& term01, FuzTerm & term02, FuzTerm & term03)
 {
 	m_Terms.push_back(term01.Clone());
 	m_Terms.push_back(term02.Clone());
 	m_Terms.push_back(term03.Clone());
 }
 
-FuzOR::FuzOR(FuzTerm & term01, FuzTerm & term02, FuzTerm & term03, FuzTerm & term04)
+FuzOR::FuzOR(FuzTerm& term01, FuzTerm & term02, FuzTerm & term03, FuzTerm & term04)
 {
 	m_Terms.push_back(term01.Clone());
 	m_Terms.push_back(term02.Clone());

@@ -2,10 +2,6 @@
 
 float FuzSet_RightShoulder::CalculateDOM(float val) const
 {
-	//Assert, make sure clients not to input silly values
-	assert(m_dRight > m_dPeak && "FuzSet_RightShoulder::CalculateDOM -> The [Right Value] should always greater than [Mid Value]");
-	assert(m_dLeft < m_dPeak && "FuzSet_RightShoulder::CalculateDOM -> The [Left Value] should always lesser than [Mid Value]");
-
 	//If input value equals peak value
 	if (val >= m_dPeak && val <= m_dRight)
 	{

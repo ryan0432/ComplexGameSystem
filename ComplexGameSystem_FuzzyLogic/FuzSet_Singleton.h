@@ -1,5 +1,16 @@
 #pragma once
+//-------------------------------------------------------------//
+//															   //
+//	Name: FuzSet_Singleton.h								   //
+//															   //
+//	Desc: A Fuzzy Set in [Singleton] shape.					   //
+//		  Degree Of Membership (DOM) range: 0.0f ~ 1.0f		   //
+//		  crisp value principle: m_dLeft < m_dPeak < m_dRight  //
+//															   //
+//-------------------------------------------------------------//
+
 #include "FuzSet_Base.h"
+
 class FuzSet_Singleton : public FuzSet_Base
 {
 public:

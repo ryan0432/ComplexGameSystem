@@ -3,7 +3,6 @@
 #include "FuzRule.h"
 #include "FuzTerm.h"
 #include "assert.h"
-#include <memory>
 
 FuzVariable& FuzzyModule::CreateFLV(const std::string& VarName)
 {
@@ -41,7 +40,7 @@ inline void FuzzyModule::Fuzzify(const std::string & NameOfFLV, float val)
 inline float FuzzyModule::DefuzzifyMaxAV(const std::string& NameOfFLV)
 {
 	//Make sure fuzzy variable that clients expect to defuzzify exists in the map
-	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "Input Fuzzy Variable doesn't exist");
+	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "FuzzyModule::DefuzzifyMaxAV -> Input Fuzzy Variable doesn't exist");
 	
 	//Defuzzify appointed FLV with MaxAV
 	m_FuzVars[NameOfFLV]->DeFuzzifyMaxAV();
@@ -50,7 +49,7 @@ inline float FuzzyModule::DefuzzifyMaxAV(const std::string& NameOfFLV)
 inline float FuzzyModule::DeFuzzifyCentroid(const std::string & NameOfFLV, CentroidAccuracy accuracy)
 {
 	//Make sure fuzzy variable that clients expect to defuzzify exists in the map
-	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "Input Fuzzy Variable doesn't exist");
+	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "FuzzyModule::DeFuzzifyCentroid -> Input Fuzzy Variable doesn't exist");
 	
 	//Defuzzify appointed FLV with Centroid based on accuracy
 	switch (accuracy)

@@ -1,4 +1,13 @@
 #pragma once
+//------------------------------------------------------------------------------//
+//																 			   	//
+//	Name: FuzSet_Base.h												 		   	//
+//																 			   	//
+//	Desc: A class that provides the base data structure and functionalities of	//
+//		  a Fuzzy Set. This base model will be drived into different shapes. 	//
+//																 			   	//
+//------------------------------------------------------------------------------//
+
 #include "assert.h"
 
 class FuzSet_Base
