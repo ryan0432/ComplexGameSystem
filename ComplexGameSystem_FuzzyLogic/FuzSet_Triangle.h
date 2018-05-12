@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZSET_TRIANGLE_H
+#define FUZSET_TRIANGLE_H
 //-------------------------------------------------------------//
 //															   //
 //	Name: FuzSet_Triangle.h									   //
@@ -29,4 +31,6 @@ private:
 	float m_dPeak;
 	float m_dRight;
 };
+
+#endif
 

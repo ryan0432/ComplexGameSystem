@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZ_PROXY_SET_H
+#define FUZ_PROXY_SET_H
 //--------------------------------------------------------------//
 //																//
 //	Name: FuzProxySet.h											//
@@ -39,3 +41,5 @@ public:
 private:
 	FuzSet_Base& m_Set;
 };
+
+#endif

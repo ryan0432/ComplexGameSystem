@@ -2,6 +2,10 @@
 
 #include "Application.h"
 #include "Renderer2D.h"
+#include "FuzzyModule.h"
+#include <iosfwd>
+#include <string>
+
 
 class ComplexGameSystem_FuzzyLogicApp : public aie::Application
 {
@@ -20,4 +24,13 @@ protected:
 
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
+
+private:
+	FuzzyModule m_FuzzyModule;
+	void InitializeFuzzyModule();
+	void ControlUnit();
+	std::ostream & PrintStatusScores(std::ostream& os);
+	float m_staminaScore;
+	float m_hydrationScore;
+	float m_resourceScore;
 };

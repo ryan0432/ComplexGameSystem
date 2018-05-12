@@ -1,3 +1,5 @@
+#ifndef FUZ_TERM_H
+#define FUZ_TERM_H
 #pragma once
 //---------------------------------------------------------------//
 //																 //
@@ -29,3 +31,4 @@ public:
 	virtual void ORwithDOM(float val) = 0;
 };
 
+#endif

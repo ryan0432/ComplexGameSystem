@@ -1,3 +1,5 @@
+#ifndef FUZZY_MODULE_H
+#define FUZZY_MODULE_H
 #pragma once
 //-----------------------------------------------------------------------------//
 //																 			   //
@@ -10,10 +12,14 @@
 
 #include <map>
 #include <vector>
+#include <iosfwd>
+#include <string>
 
-class FuzVariable;
-class FuzRule;
-class FuzTerm;
+#include "FuzSet_Base.h"
+#include "FuzVariable.h"
+#include "FuzRule.h"
+#include "FuzProxySet.h"
+#include "FuzOperators.h"
 
 enum CentroidAccuracy
 {
@@ -28,19 +34,22 @@ class FuzzyModule
 public:
 	//Create a new "empty" fuzzy linguistic variable and returns
 	//a reference to it.
-	FuzVariable & CreateFLV(const std::string& VarName);
+	FuzVariable& CreateFLV(const std::string& VarName);
 
 	//Add a Fuzzy Rule to the module
 	void AddFuzRule(FuzTerm& antecedent, FuzTerm& consequence);
 
 	//Fuzzify a crisp val by the FLV called
-	inline void Fuzzify(const std::string& NameOfFLV, float val);
+	void Fuzzify(const std::string& NameOfFLV, float val);
 
 	//Defuzzify a Fuzzy Variable and return a crisp value with MaxAV method
-	inline float DefuzzifyMaxAV(const std::string& NameOfFLV);
+	float DefuzzifyMaxAV(const std::string& NameOfFLV);
 
 	//Defuzzify a Fuzzy Variable and return a crisp value with MaxAV method
-	inline float DeFuzzifyCentroid(const std::string& NameOfFLV, CentroidAccuracy accuracy);
+	float DeFuzzifyCentroid(const std::string& NameOfFLV, CentroidAccuracy accuracy);
+
+	//Print the DOMs of all the variables in the module to an output stream
+	std::ostream& PrintAllDOMs(std::ostream& os);
 
 	~FuzzyModule();
 	
@@ -57,6 +66,7 @@ private:
 	std::vector<FuzRule*> m_FuzRules;
 
 	//Set confidences in each consquests to 0. Will be used by Defuzzify()
-	inline void SetConfsOfConsqToZero();
+	void SetConfsOfConsqToZero();
 };
 
+#endif

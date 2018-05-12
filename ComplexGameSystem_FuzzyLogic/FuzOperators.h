@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZ_OPERATORS_H
+#define FUZ_OPERATORS_H
 //--------------------------------------------------------------------------//
 //																 			//
 //	Name: FuzOperators.h												 	//
@@ -12,7 +14,6 @@
 #include "FuzTerm.h"
 #include "assert.h"
 #include <vector>
-#include <initializer_list>
 
 class FuzAND : public FuzTerm
 {
@@ -79,4 +80,6 @@ public:
 	void ClearDOM() { assert(0 && "FuzOR::ClearDOM() is a invalid function for ORing"); }
 	void ORwithDOM(float var) { assert(0 && "FuzOR::ORwithDOM() is a invalid function for ORing"); }
 };
+
+#endif
 

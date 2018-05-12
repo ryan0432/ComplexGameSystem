@@ -1,5 +1,4 @@
 #include "FuzVariable.h"
-#include "FuzzyModule.h"
 #include "FuzOperators.h"
 #include "FuzSet_Base.h"
 #include "FuzSet_Triangle.h"
@@ -8,6 +7,8 @@
 #include "FuzSet_Singleton.h"
 #include "FuzProxySet.h"
 #include "assert.h"
+#include <iostream>
+
 
 FuzVariable::~FuzVariable()
 {
@@ -165,4 +166,16 @@ void FuzVariable::AddFuzSetDebug(float minBound, float peak, float maxBound) con
 	assert(minBound < peak && "FuzVariable::AddFuzSetDebug -> The [Left Value] should always lesser than [Mid Value]");
 	assert(maxBound > minBound && "FuzVariable::AddFuzSetDebug -> The [Right Value] should always greater than [Left Value]");
 	assert(minBound < maxBound && "FuzVariable::AddFuzSetDebug -> The [Left Value] should always lesser than [Right Value]");
+}
+
+std::ostream& FuzVariable::PrintDOMs(std::ostream& os)
+{
+	for (auto i : m_MemberSets)
+	{
+		os << "\n" << i.first << " is " << i.second->GetDOM();
+	}
+
+	os << "\nMin Range: " << m_dMinRange << "\nMaxRange: " << m_dMaxRange;
+
+	return os;
 }

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZSET_LEFTSHOULDER_H
+#define FUZSET_LEFTSHOULDER_H
 //-------------------------------------------------------------//
 //															   //
 //	Name: FuzSet_LeftShoulder.h								   //
@@ -31,3 +33,4 @@ private:
 	float m_dRight;
 };
 
+#endif

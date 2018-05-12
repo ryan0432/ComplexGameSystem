@@ -1,3 +1,5 @@
+#ifndef FUZ_VARIABLE_H
+#define FUZ_VARIABLE_H
 #pragma once
 //-----------------------------------------------------------------//
 //																   //
@@ -12,6 +14,8 @@
 //-----------------------------------------------------------------//
 
 #include <map>
+#include <iosfwd>
+#include <string>
 
 class FuzzyModule;
 class FuzSet_Base;
@@ -73,8 +77,13 @@ public:
 	//priciple: minBound < peak < maxBound
 	void AddFuzSetDebug(float minBound, float peak, float maxBound) const;
 
+	//Print DOMs for all subsets in the Fuzzy Variable
+	std::ostream& PrintDOMs(std::ostream& os);
+
 	//Disallow clients to shallow copy a Fuzzy Variable by creating instance
 	FuzVariable(const FuzVariable&) = delete;
 	//Disallow clients to shallow copy a Fuzzy Variable by assigning
 	FuzVariable& operator=(const FuzVariable&) = delete;
 };
+
+#endif

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZ_RULE_H
+#define FUZ_RULE_H
 //--------------------------------------------------------------------------//
 //																 			//
 //	Name: FuzRule.h												 			//
@@ -41,4 +43,6 @@ private:
 	//Consequence, usually a single fuzzy set, but can be several ANDed Sets
 	FuzTerm* m_pConsequence;
 };
+
+#endif
 

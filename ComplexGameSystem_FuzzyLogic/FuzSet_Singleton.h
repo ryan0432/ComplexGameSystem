@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZSET_SINGLETON_H
+#define FUZSET_SINGLETON_H
 //-------------------------------------------------------------//
 //															   //
 //	Name: FuzSet_Singleton.h								   //
@@ -27,3 +29,4 @@ private:
 	float m_dRight;
 };
 
+#endif

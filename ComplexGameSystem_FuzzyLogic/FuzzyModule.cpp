@@ -1,8 +1,7 @@
 #include "FuzzyModule.h"
-#include "FuzVariable.h"
-#include "FuzRule.h"
-#include "FuzTerm.h"
 #include "assert.h"
+#include <iostream>
+#include <stdarg.h>
 
 FuzVariable& FuzzyModule::CreateFLV(const std::string& VarName)
 {
@@ -19,7 +18,7 @@ void FuzzyModule::AddFuzRule(FuzTerm& antecedent, FuzTerm& consequence)
 	m_FuzRules.push_back(new FuzRule(antecedent, consequence));
 }
 
-inline void FuzzyModule::Fuzzify(const std::string & NameOfFLV, float val)
+void FuzzyModule::Fuzzify(const std::string & NameOfFLV, float val)
 {
 	//Make sure fuzzy variable that clients expect to defuzzify exists in the map
 	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "Input Fuzzy Variable doesn't exist");
@@ -37,16 +36,16 @@ inline void FuzzyModule::Fuzzify(const std::string & NameOfFLV, float val)
 	m_FuzVars[NameOfFLV]->Fuzzify(val);
 }
 
-inline float FuzzyModule::DefuzzifyMaxAV(const std::string& NameOfFLV)
+float FuzzyModule::DefuzzifyMaxAV(const std::string& NameOfFLV)
 {
 	//Make sure fuzzy variable that clients expect to defuzzify exists in the map
 	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "FuzzyModule::DefuzzifyMaxAV -> Input Fuzzy Variable doesn't exist");
 	
 	//Defuzzify appointed FLV with MaxAV
-	m_FuzVars[NameOfFLV]->DeFuzzifyMaxAV();
+	return m_FuzVars[NameOfFLV]->DeFuzzifyMaxAV();
 }
 
-inline float FuzzyModule::DeFuzzifyCentroid(const std::string & NameOfFLV, CentroidAccuracy accuracy)
+float FuzzyModule::DeFuzzifyCentroid(const std::string & NameOfFLV, CentroidAccuracy accuracy)
 {
 	//Make sure fuzzy variable that clients expect to defuzzify exists in the map
 	assert(m_FuzVars.find(NameOfFLV) != m_FuzVars.end() && "FuzzyModule::DeFuzzifyCentroid -> Input Fuzzy Variable doesn't exist");
@@ -55,28 +54,40 @@ inline float FuzzyModule::DeFuzzifyCentroid(const std::string & NameOfFLV, Centr
 	switch (accuracy)
 	{
 	case LOW_5:
-		m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(LOW_5);
+		return m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(LOW_5);
 		break;
 	case MID_10:
-		m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(MID_10);
+		return m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(MID_10);
 		break;
 	case HIGH_15:
-		m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(HIGH_15);
+		return m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(HIGH_15);
 		break;
 	case EXTREME_20:
-		m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(EXTREME_20);
+		return m_FuzVars[NameOfFLV]->DeFuzzifyCentroid(EXTREME_20);
 		break;
 	}
 
 	return 0.0f;
 }
 
-inline void FuzzyModule::SetConfsOfConsqToZero()
+void FuzzyModule::SetConfsOfConsqToZero()
 {
 	for (auto i : m_FuzRules)
 	{
 		i->SetConfidenceOfConsequentToZero();
 	}
+}
+
+std::ostream & FuzzyModule::PrintAllDOMs(std::ostream & os)
+{
+	for (auto i : m_FuzVars)
+	{
+		os << "\n------------- " << i.first << " -------------\n";
+		i.second->PrintDOMs(os);
+		os << std::endl;
+	}
+
+	return os;
 }
 
 FuzzyModule::~FuzzyModule()

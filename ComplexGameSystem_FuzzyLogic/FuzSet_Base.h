@@ -1,4 +1,6 @@
 #pragma once
+#ifndef FUZSET_BASE_H
+#define FUZSET_BASE_H
 //------------------------------------------------------------------------------//
 //																 			   	//
 //	Name: FuzSet_Base.h												 		   	//
@@ -9,6 +11,7 @@
 //------------------------------------------------------------------------------//
 
 #include "assert.h"
+#include <string>
 
 class FuzSet_Base
 {
@@ -52,3 +55,4 @@ public:
 
 };
 
+#endif
