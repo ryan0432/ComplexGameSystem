@@ -39,12 +39,10 @@ void ComplexGameSystem_FuzzyLogicApp::shutdown()
 
 void ComplexGameSystem_FuzzyLogicApp::update(float deltaTime)
 {
-	ControlUnit();
-
 	m_FuzzyModule.Fuzzify("Stamina", m_staminaScore);
 	m_FuzzyModule.Fuzzify("Hydration", m_hydrationScore);
 
-	m_resourceScore = m_FuzzyModule.DefuzzifyMaxAV("ResourceDesirability");
+	ControlUnit();
 
 	m_FuzzyModule.PrintAllDOMs(std::cout);
 	PrintStatusScores(std::cout);
@@ -53,7 +51,6 @@ void ComplexGameSystem_FuzzyLogicApp::update(float deltaTime)
 
 void ComplexGameSystem_FuzzyLogicApp::draw()
 {
-
 	// wipe the screen to the background colour
 	clearScreen();
 
@@ -118,6 +115,12 @@ void ComplexGameSystem_FuzzyLogicApp::ControlUnit()
 	if (input->wasKeyPressed(aie::INPUT_KEY_LEFT))
 		if (m_hydrationScore >= 5.0f)
 			m_hydrationScore -= 5.0f;
+
+	if (input->wasKeyPressed(aie::INPUT_KEY_Q))
+		m_resourceScore = m_FuzzyModule.DefuzzifyMaxAV("ResourceDesirability");
+
+	if (input->wasKeyPressed(aie::INPUT_KEY_W))
+		m_resourceScore = m_FuzzyModule.DeFuzzifyCentroid("ResourceDesirability", EXTREME_20);
 }
 
 std::ostream & ComplexGameSystem_FuzzyLogicApp::PrintStatusScores(std::ostream & os)
@@ -126,6 +129,12 @@ std::ostream & ComplexGameSystem_FuzzyLogicApp::PrintStatusScores(std::ostream &
 	os << "\nStamina   : " << m_staminaScore;
 	os << "\nHydration : " << m_hydrationScore;
 	os << "\nResource  : " << m_resourceScore;
+	os << "\n\n";
+	os << "\nPress [UP]    to add Stamina,   [DOWN] to reduce.";
+	os << "\nPress [RIGHT] to add Hydration, [LEFT] to reduce.";
+	os << "\n";
+	os << "\nPress [Q]     to Defuzzify in   [MAX AVERAGE] mode.";
+	os << "\nPress [W]     to Defuzzify in   [CENTROID]    mode.";
 	os << std::endl;
 
 	return os;
