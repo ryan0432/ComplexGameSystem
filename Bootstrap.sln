@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bootstrap", "bootstrap\Bootstrap.vcxproj", "{AF59BB0B-E059-4773-83DC-728A949647DA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DEA49362-B428-4215-8D64-4EA0B4FF0858} = {DEA49362-B428-4215-8D64-4EA0B4FF0858}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project2D", "Project2D\Project2D.vcxproj", "{3F428D0C-1CC8-47C3-818A-A3C2972C74C9}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -19,6 +16,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project3D", "Project3D\Proj
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComplexGameSystem_FuzzyLogic", "ComplexGameSystem_FuzzyLogic\ComplexGameSystem_FuzzyLogic.vcxproj", "{DEA49362-B428-4215-8D64-4EA0B4FF0858}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF59BB0B-E059-4773-83DC-728A949647DA} = {AF59BB0B-E059-4773-83DC-728A949647DA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,5 +63,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCFD3CE7-9C1E-4CC1-AC01-4417F2C44A16}
 	EndGlobalSection
 EndGlobal

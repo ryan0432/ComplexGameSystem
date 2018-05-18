@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\FuzzySetTypes">
-      <UniqueIdentifier>{a3fe022d-1673-4065-81bd-4b5c4dd9169a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\FuzzySetTypes">
-      <UniqueIdentifier>{dcc2435d-3a6e-41e6-a14a-2c224cf903f8}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ComplexGameSystem_FuzzyLogicApp.cpp">
@@ -27,64 +21,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FuzzyModule.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FuzVariable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FuzSet_Triangle.cpp">
-      <Filter>Source Files\FuzzySetTypes</Filter>
-    </ClCompile>
-    <ClCompile Include="FuzSet_RightShoulder.cpp">
-      <Filter>Source Files\FuzzySetTypes</Filter>
-    </ClCompile>
-    <ClCompile Include="FuzSet_LeftShoulder.cpp">
-      <Filter>Source Files\FuzzySetTypes</Filter>
-    </ClCompile>
-    <ClCompile Include="FuzOperators.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FuzSet_Singleton.cpp">
-      <Filter>Source Files\FuzzySetTypes</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexGameSystem_FuzzyLogicApp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzzyModule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzRule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzTerm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzVariable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzSet_Triangle.h">
-      <Filter>Header Files\FuzzySetTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzSet_RightShoulder.h">
-      <Filter>Header Files\FuzzySetTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzSet_LeftShoulder.h">
-      <Filter>Header Files\FuzzySetTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzSet_Base.h">
-      <Filter>Header Files\FuzzySetTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzOperators.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzProxySet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FuzSet_Singleton.h">
-      <Filter>Header Files\FuzzySetTypes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
